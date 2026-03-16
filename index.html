@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Sentiment Analysis</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>AI Sentiment Analysis</h1>
+<p>Công cụ phân tích cảm xúc phản hồi khách hàng bằng AI</p>
+<button id="startBtn">Phân tích ngay</button>
+</header>
+
+<section class="input-box">
+
+<h2>Nhập phản hồi khách hàng</h2>
+
+<textarea id="feedback"
+placeholder="Nhập phản hồi khách hàng..."></textarea>
+
+<br>
+
+<input type="file" id="imageUpload">
+
+<br>
+
+<button id="analyzeBtn">Analyze</button>
+
+</section>
+
+<section class="result">
+
+<h2>Kết quả phân tích</h2>
+
+<div id="sentiment"></div>
+<div id="score"></div>
+<div id="stars"></div>
+<div id="meter"></div>
+<div id="keywords"></div>
+<div id="aspect"></div>
+<div id="insight"></div>
+<div id="recommend"></div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
