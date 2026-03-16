@@ -1,52 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
+
 <meta charset="UTF-8">
-<title>AI Sentiment Analysis</title>
+
+<title>Phân tích cảm xúc bằng AI</title>
+
 <link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
+<div class="background"></div>
+
 <header>
-<h1>AI Sentiment Analysis</h1>
-<p>Công cụ phân tích cảm xúc phản hồi khách hàng bằng AI</p>
-<button id="startBtn">Phân tích ngay</button>
+
+<h1>🤖 Phân tích cảm xúc bằng AI</h1>
+
+<p>Phân tích cảm xúc phản hồi khách hàng bằng trí tuệ nhân tạo</p>
+
 </header>
 
-<section class="input-box">
+<div class="container">
 
-<h2>Nhập phản hồi khách hàng</h2>
+<!-- INPUT -->
 
-<textarea id="feedback"
-placeholder="Nhập phản hồi khách hàng..."></textarea>
+<div class="card">
 
-<br>
+<h2>Phản hồi khách hàng</h2>
 
-<input type="file" id="imageUpload">
+<textarea
+id="feedback"
+placeholder="Nhập phản hồi của khách hàng..."
+></textarea>
 
-<br>
+<button id="analyzeBtn">
+Phân tích cảm xúc
+</button>
 
-<button id="analyzeBtn">Analyze</button>
+</div>
 
-</section>
 
-<section class="result">
+<!-- RESULT -->
+
+<div class="card result-card">
 
 <h2>Kết quả phân tích</h2>
 
 <div id="sentiment"></div>
-<div id="score"></div>
-<div id="stars"></div>
-<div id="meter"></div>
-<div id="keywords"></div>
-<div id="aspect"></div>
-<div id="insight"></div>
-<div id="recommend"></div>
 
-</section>
+<div id="score"></div>
+
+<div id="stars"></div>
+
+<div class="meter">
+<div id="meterBar"></div>
+</div>
+
+
+<h3>Từ khóa cảm xúc</h3>
+
+<div id="highlight"></div>
+
+
+<h3>Phân tích theo khía cạnh</h3>
+
+<table>
+
+<tr>
+<th>Khía cạnh</th>
+<th>Cảm xúc</th>
+</tr>
+
+<tr>
+<td>Sản phẩm</td>
+<td id="product"></td>
+</tr>
+
+<tr>
+<td>Giao hàng</td>
+<td id="delivery"></td>
+</tr>
+
+<tr>
+<td>Giá cả</td>
+<td id="price"></td>
+</tr>
+
+</table>
+
+
+<h3>Nhận xét của AI</h3>
+
+<div id="insight"></div>
+
+
+<h3>Gợi ý cải thiện</h3>
+
+<div id="recommendation"></div>
+
+
+<h3>Bảng thống kê cảm xúc</h3>
+
+<div class="dashboard">
+
+<div class="stat positive">
+Tích cực
+<span id="positiveCount">0%</span>
+</div>
+
+<div class="stat neutral">
+Trung tính
+<span id="neutralCount">0%</span>
+</div>
+
+<div class="stat negative">
+Tiêu cực
+<span id="negativeCount">0%</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
