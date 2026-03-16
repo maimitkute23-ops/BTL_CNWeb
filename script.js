@@ -11,33 +11,48 @@ alert("Vui lòng nhập phản hồi!");
 return;
 }
 
-const response = await fetch("https://api.openai.com/v1/chat/completions",{
-
+const response = await fetch(
+"https://api.groq.com/openai/v1/chat/completions",
+{
 method:"POST",
 
 headers:{
 "Content-Type":"application/json",
-"Authorization":"Bearer YOUR_API_KEY"
+"Authorization":"Bearer YOUR_GROQ_API_KEY"
 },
 
 body:JSON.stringify({
 
-model:"gpt-4o-mini",
+model:"llama3-8b-8192",
 
 messages:[
 {
+role:"system",
+content:"You are a sentiment analysis AI"
+},
+{
 role:"user",
-content:`Analyze sentiment of this text and return JSON:
+content:`
+Analyze this customer feedback.
 
 Text: ${text}
 
-Return:
-sentiment
-score (-1 to 1)
-keywords
-aspect analysis
-insight
-recommendation
+Return JSON format:
+
+{
+sentiment:"",
+score:0,
+keywords:[],
+aspect:{
+product:"",
+delivery:"",
+price:""
+},
+insight:"",
+recommendation:""
+}
+
+Score must be between -1 and 1
 `
 }
 
@@ -52,5 +67,11 @@ const data = await response.json();
 const result = data.choices[0].message.content;
 
 displayResult(result);
+
+}
+function displayResult(result){
+
+document.getElementById("sentiment").innerText =
+"Result: " + result;
 
 }
